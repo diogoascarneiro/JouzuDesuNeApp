@@ -1,7 +1,8 @@
 import * as React from 'react';
-import {View, StyleSheet, ImageBackground, Text, Image} from 'react-native';
+import {View, StyleSheet, ImageBackground, Image} from 'react-native';
 
-import {RoundedBtn} from '../../components/UI/Buttons';
+import {BtnFull} from '../../components/UI/Buttons';
+import {H1, H2, P} from '../../components/UI/Text';
 // Image assets
 const backgroundImg = require('../../assets/img/sakura-hero.jpg');
 const logoMid = require('../../assets/logo/logo192.png');
@@ -17,16 +18,16 @@ const StartScreen = () => {
         <View style={styles.innerContainer}>
           <View style={styles.headingContainer}>
             <Image source={logoMid} style={styles.logoMid} />
-            <Text>Jouzu desu ne!</Text>
+            <H1>Jouzu desu ne!</H1>
           </View>
-          <Text>Ready to learn some Japanese?</Text>
-          <Text>
+          <H2>Ready to learn some Japanese?</H2>
+          <P>
             Jouzu desu ne! is an online flashcards app for learning Japanese
             words, based on the Anki Core 2k deck. The goal is to teach you the
             most essential words and Kanji in a fast and fun way.
-          </Text>
-          <RoundedBtn title="Log in" />
-          <RoundedBtn title="Sign up" />
+          </P>
+          <BtnFull title="Log in" />
+          <BtnFull title="Sign up" />
         </View>
       </ImageBackground>
     </View>
@@ -47,7 +48,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'rgba(0,0,0,0.1)',
+    backgroundColor: 'rgba(255,255,255,0.5)',
   },
   headingContainer: {
     justifyContent: 'center',

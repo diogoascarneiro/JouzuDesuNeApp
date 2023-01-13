@@ -1,6 +1,8 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import {DefaultTheme} from 'styled-components/native';
 
+// TODO: ADD FONT VARELA ROUND
+
 // Basics
 const black = '#000000';
 const white = '#FFFFFF';
