@@ -8,7 +8,7 @@ const backgroundImg = require('../../assets/img/sakura-hero.jpg');
 const logoMid = require('../../assets/logo/logo192.png');
 //interface StartScreenProps {}
 
-const StartScreen = () => {
+const StartScreen = ({navigation}) => {
   return (
     <View style={styles.container}>
       <ImageBackground

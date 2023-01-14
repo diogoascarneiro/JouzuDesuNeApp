@@ -7,6 +7,7 @@ interface HeadingProps {
 
 export const H1 = styled.Text<HeadingProps>`
   font-size: 32px;
+  font-family: 'VarelaRound-Regular';
   color: ${props => props.theme.colors.accent3};
 `;
 

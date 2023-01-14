@@ -18,7 +18,7 @@ const App = () => {
             <Stack.Screen
               name="Start"
               component={StartScreen}
-              options={{title: 'Jouzu desu ne!'}}
+              options={{headerShown: false}}
             />
           </Stack.Navigator>
         </NavigationContainer>
