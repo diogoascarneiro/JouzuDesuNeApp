@@ -3,6 +3,8 @@ import {View, StyleSheet, ImageBackground, Image} from 'react-native';
 
 import {BtnFull} from '../../components/UI/Buttons';
 import {H1, H2, P} from '../../components/UI/Text';
+import {Container} from '../../components/UI/BaseStyles';
+
 // Image assets
 const backgroundImg = require('../../assets/img/sakura-hero.jpg');
 const logoMid = require('../../assets/logo/logo192.png');
@@ -18,16 +20,24 @@ const StartScreen = ({navigation}) => {
         <View style={styles.innerContainer}>
           <View style={styles.headingContainer}>
             <Image source={logoMid} style={styles.logoMid} />
-            <H1>Jouzu desu ne!</H1>
+            <H1 color="blue">Jouzu desu ne!</H1>
           </View>
-          <H2>Ready to learn some Japanese?</H2>
-          <P>
-            Jouzu desu ne! is an online flashcards app for learning Japanese
-            words, based on the Anki Core 2k deck. The goal is to teach you the
-            most essential words and Kanji in a fast and fun way.
-          </P>
-          <BtnFull title="Log in" />
-          <BtnFull title="Sign up" />
+          <Container padded>
+            <H2>Ready to learn some Japanese?</H2>
+            <P>
+              Jouzu desu ne! is an online flashcards app for learning Japanese
+              words, based on the Anki Core 2k deck. The goal is to teach you
+              the most essential words and Kanji in a fast and fun way.
+            </P>
+            <BtnFull
+              title="Log in"
+              onPress={() => navigation.navigate('Login')}
+            />
+            <BtnFull
+              title="Sign up"
+              onPress={() => navigation.navigate('Signup')}
+            />
+          </Container>
         </View>
       </ImageBackground>
     </View>
