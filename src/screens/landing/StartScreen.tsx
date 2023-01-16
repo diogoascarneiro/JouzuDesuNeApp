@@ -1,13 +1,9 @@
 import * as React from 'react';
-import {View, StyleSheet, ImageBackground, Image} from 'react-native';
-
-import {BtnFull} from '../../components/UI/Buttons';
-import {H1, H2, P} from '../../components/UI/Text';
-import {Container} from '../../components/UI/BaseStyles';
+import {View, StyleSheet, ImageBackground} from 'react-native';
+import {LogoM, H1, H2, Container, P, BtnFull} from './styled.StartScreen';
 
 // Image assets
 const backgroundImg = require('../../assets/img/sakura-hero.jpg');
-const logoMid = require('../../assets/logo/logo192.png');
 //interface StartScreenProps {}
 
 const StartScreen = ({navigation}) => {
@@ -18,10 +14,8 @@ const StartScreen = ({navigation}) => {
         resizeMode="cover"
         style={styles.backgroundImg}>
         <View style={styles.innerContainer}>
-          <View style={styles.headingContainer}>
-            <Image source={logoMid} style={styles.logoMid} />
-            <H1 color="blue">Jouzu desu ne!</H1>
-          </View>
+          <LogoM size={120} />
+          <H1>Jouzu desu ne!</H1>
           <Container padded>
             <H2>Ready to learn some Japanese?</H2>
             <P>

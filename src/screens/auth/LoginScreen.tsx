@@ -1,15 +1,36 @@
 import React from 'react';
-import {Text} from 'react-native';
-import {BtnFull} from '../../components/UI/Buttons';
-import {TextInputFull} from '../../components/UI/Inputs';
+
+import {UsernameInput, PasswordInput} from '../../components/UI/Inputs';
+import {
+  MainContainer,
+  BtnFull,
+  H1,
+  AuthWrapper,
+  HeaderWrapper,
+  LogoS,
+  LogoWrapper,
+} from './styled.Auth';
 import {SafeAreaView} from 'react-native';
 
 const LoginScreen = ({navigation}) => {
   return (
     <SafeAreaView>
-      <Text>This is the Login page!</Text>
-      <TextInputFull autoCapitalize="none" autoComplete="off" />
-      <BtnFull title="goback" onPress={() => navigation.navigate('Start')} />
+      <MainContainer>
+        <LogoWrapper>
+          <LogoS />
+        </LogoWrapper>
+        <HeaderWrapper>
+          <H1 align="left">Login</H1>
+        </HeaderWrapper>
+        <AuthWrapper>
+          <UsernameInput />
+          <PasswordInput />
+          <BtnFull
+            title="Return "
+            onPress={() => navigation.navigate('Start')}
+          />
+        </AuthWrapper>
+      </MainContainer>
     </SafeAreaView>
   );
 };
