@@ -1,3 +1,17 @@
+import type {NativeStackScreenProps} from '@react-navigation/native-stack';
+// Navigation types
+
+export type RootStackParams = {
+  Start: undefined;
+  Login: undefined;
+  Signup: undefined;
+};
+
+export type StartProps = NativeStackScreenProps<RootStackParams, 'Start'>;
+export type LoginProps = NativeStackScreenProps<RootStackParams, 'Login'>;
+export type SignupProps = NativeStackScreenProps<RootStackParams, 'Signup'>;
+
+// DB Item Shapes
 export interface CardShape {
   _id?: string;
   cardNumber: number;

@@ -9,10 +9,12 @@ import {
   HeaderWrapper,
   LogoS,
   LogoWrapper,
+  TextLink,
 } from './styled.Auth';
 import {SafeAreaView} from 'react-native';
+import {LoginProps} from '../../utils/globalTypes';
 
-const LoginScreen = ({navigation}) => {
+const LoginScreen = ({navigation}: LoginProps) => {
   return (
     <SafeAreaView>
       <MainContainer>
@@ -20,16 +22,19 @@ const LoginScreen = ({navigation}) => {
           <LogoS />
         </LogoWrapper>
         <HeaderWrapper>
-          <H1 align="left">Login</H1>
+          <H1 align="left">Log in</H1>
         </HeaderWrapper>
         <AuthWrapper>
           <UsernameInput />
           <PasswordInput />
           <BtnFull
-            title="Return "
+            title="Log in"
             onPress={() => navigation.navigate('Start')}
           />
         </AuthWrapper>
+        <TextLink onPress={() => navigation.navigate('Signup')}>
+          Need to sign up? Do it here.
+        </TextLink>
       </MainContainer>
     </SafeAreaView>
   );

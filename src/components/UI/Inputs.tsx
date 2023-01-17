@@ -12,13 +12,13 @@ export const TextInputFull = styled.TextInput`
 
 export const UsernameInput = styled(TextInputFull).attrs(() => ({
   autoComplete: 'off',
-  autoCapitalize: false,
+  autoCapitalize: 'none',
   placeholder: 'Your username',
 }))``;
 
 export const PasswordInput = styled(TextInputFull).attrs(() => ({
   autoComplete: 'off',
-  autoCapitalize: false,
+  autoCapitalize: 'none',
   placeholder: 'Your password',
   secureTextEntry: true,
 }))``;

@@ -8,31 +8,32 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import LoginScreen from './src/screens/auth/LoginScreen';
 import SignupScreen from './src/screens/auth/SignupScreen';
+import {RootStackParams} from './src/utils/globalTypes';
 
-const Stack = createNativeStackNavigator();
+const RootStack = createNativeStackNavigator<RootStackParams>();
 
 const App = () => {
   return (
     <>
       <ThemeProvider theme={lightTheme}>
         <NavigationContainer>
-          <Stack.Navigator>
-            <Stack.Screen
+          <RootStack.Navigator initialRouteName="Start">
+            <RootStack.Screen
               name="Start"
               component={StartScreen}
               options={{headerShown: false}}
             />
-            <Stack.Screen
+            <RootStack.Screen
               name="Login"
               component={LoginScreen}
               options={{headerShown: false}}
             />
-            <Stack.Screen
+            <RootStack.Screen
               name="Signup"
               component={SignupScreen}
               options={{headerShown: false}}
             />
-          </Stack.Navigator>
+          </RootStack.Navigator>
         </NavigationContainer>
       </ThemeProvider>
     </>

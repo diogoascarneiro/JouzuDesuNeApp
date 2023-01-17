@@ -1,19 +1,43 @@
-import * as React from 'react';
-import {Text, View, StyleSheet} from 'react-native';
-import {BtnFull} from '../../components/UI/Buttons';
-//interface SignupProps {}
+import React from 'react';
 
-const SignupScreen = ({navigation}) => {
+import {UsernameInput, PasswordInput} from '../../components/UI/Inputs';
+import {
+  MainContainer,
+  BtnFull,
+  H1,
+  AuthWrapper,
+  HeaderWrapper,
+  LogoS,
+  LogoWrapper,
+  TextLink,
+} from './styled.Auth';
+import {SafeAreaView} from 'react-native';
+import {SignupProps} from '../../utils/globalTypes';
+
+const SignupScreen = ({navigation}: SignupProps) => {
   return (
-    <View style={styles.container}>
-      <Text>Signup</Text>
-      <BtnFull title="goback" onPress={() => navigation.navigate('Start')} />
-    </View>
+    <SafeAreaView>
+      <MainContainer>
+        <LogoWrapper>
+          <LogoS />
+        </LogoWrapper>
+        <HeaderWrapper>
+          <H1 align="left">Sign up</H1>
+        </HeaderWrapper>
+        <AuthWrapper>
+          <UsernameInput />
+          <PasswordInput />
+          <BtnFull
+            title="Sign up"
+            onPress={() => navigation.navigate('Start')}
+          />
+        </AuthWrapper>
+        <TextLink onPress={() => navigation.navigate('Login')}>
+          Already signed up? Log in here.
+        </TextLink>
+      </MainContainer>
+    </SafeAreaView>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {},
-});
 
 export default SignupScreen;

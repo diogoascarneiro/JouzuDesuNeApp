@@ -25,6 +25,7 @@ export const P = styled(BaseText).attrs((props: TextProps) => ({
   font-size: 16px;
   color: ${props => props.color};
   text-align: ${props => props.align};
+  margin: 2% 0;
 `;
 
 export const H1 = styled(Heading)`

@@ -1,12 +1,13 @@
 import * as React from 'react';
 import {View, StyleSheet, ImageBackground} from 'react-native';
-import {LogoM, H1, H2, Container, P, BtnFull} from './styled.StartScreen';
+import {StartProps} from '../../utils/globalTypes';
+import {LogoM, H1, H3, Container, P, BtnFull} from './styled.StartScreen';
 
 // Image assets
 const backgroundImg = require('../../assets/img/sakura-hero.jpg');
 //interface StartScreenProps {}
 
-const StartScreen = ({navigation}) => {
+const StartScreen = ({navigation}: StartProps) => {
   return (
     <View style={styles.container}>
       <ImageBackground
@@ -15,9 +16,9 @@ const StartScreen = ({navigation}) => {
         style={styles.backgroundImg}>
         <View style={styles.innerContainer}>
           <LogoM size={120} />
-          <H1>Jouzu desu ne!</H1>
+          <H1 align="center">Jouzu desu ne!</H1>
           <Container padded>
-            <H2>Ready to learn some Japanese?</H2>
+            <H3 align="center">Ready to learn some Japanese?</H3>
             <P>
               Jouzu desu ne! is an online flashcards app for learning Japanese
               words, based on the Anki Core 2k deck. The goal is to teach you
