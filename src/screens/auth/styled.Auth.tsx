@@ -14,7 +14,7 @@ interface TextLinkProps {
 }
 
 export const MainContainer = styled(Container)`
-  height: 100%;
+  height: 90%;
   padding: 10%;
   //background-color: ${props => props.theme.colors.accent2};
   justify-content: center;
@@ -22,6 +22,11 @@ export const MainContainer = styled(Container)`
 `;
 
 export const AuthWrapper = styled(Container)``;
+
+export const NavWrapper = styled(Container)`
+  padding: 15px;
+  height: auto;
+`;
 
 export const HeaderWrapper = styled(Container)`
   width: 100%;

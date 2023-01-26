@@ -7,16 +7,25 @@ import {
   H1,
   AuthWrapper,
   HeaderWrapper,
+  NavWrapper,
   LogoS,
   LogoWrapper,
   TextLink,
 } from './styled.Auth';
+import Icon from 'react-native-vector-icons/Ionicons';
 import {SafeAreaView} from 'react-native';
 import {LoginProps} from '../../utils/globalTypes';
 
 const LoginScreen = ({navigation}: LoginProps) => {
   return (
     <SafeAreaView>
+      <NavWrapper>
+        <Icon
+          name="arrow-back"
+          size={30}
+          onPress={() => navigation.navigate('Start')}
+        />
+      </NavWrapper>
       <MainContainer>
         <LogoWrapper>
           <LogoS />

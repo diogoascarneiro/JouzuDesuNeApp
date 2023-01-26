@@ -5,7 +5,8 @@ import {LogoM, H1, H3, Container, P, BtnFull} from './styled.StartScreen';
 
 // Image assets
 const backgroundImg = require('../../assets/img/sakura-hero.jpg');
-//interface StartScreenProps {}
+
+// TODO: Finish converting normal styles to styled components
 
 const StartScreen = ({navigation}: StartProps) => {
   return (
