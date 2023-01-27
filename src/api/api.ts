@@ -1,5 +1,6 @@
 import axios from 'axios';
 import {DeckShape, UserShape} from '../utils/globalTypes';
+import {REACT_APP_JOUZUDESUNE_API} from '@env';
 
 // Typescript interfaces
 interface RandomDeckOptions {
@@ -8,7 +9,7 @@ interface RandomDeckOptions {
   userId: string;
 }
 
-const baseURL = `${process.env.REACT_APP_JOUZUDESUNE_API}/api`;
+const baseURL = `${REACT_APP_JOUZUDESUNE_API}/api`;
 
 /* Users */
 

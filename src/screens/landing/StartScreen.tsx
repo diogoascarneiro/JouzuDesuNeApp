@@ -1,7 +1,8 @@
-import * as React from 'react';
+import {useContext} from 'react';
 import {View, StyleSheet, ImageBackground} from 'react-native';
 import {StartProps} from '../../utils/globalTypes';
 import {LogoM, H1, H3, Container, P, BtnFull} from './styled.StartScreen';
+import {UserContext} from '../../context/UserContext';
 
 // Image assets
 const backgroundImg = require('../../assets/img/sakura-hero.jpg');
@@ -9,6 +10,9 @@ const backgroundImg = require('../../assets/img/sakura-hero.jpg');
 // TODO: Finish converting normal styles to styled components
 
 const StartScreen = ({navigation}: StartProps) => {
+  // const {isLoggedIn} = useContext(UserContext);
+
+  // if (isLoggedIn) navigation.navigate('Home');
   return (
     <View style={styles.container}>
       <ImageBackground

@@ -15,12 +15,11 @@ interface UserContextShape {
   isLoading: boolean;
 }
 
-const UserContext = createContext<UserContextShape | undefined>(undefined);
+const UserContext = createContext<UserContextShape>({} as UserContextShape);
 
 const UserProviderWrapper = ({children}: {children: ReactNode}) => {
   const [user, setUser] = useState(null);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-
   const [isLoading, setIsLoading] = useState(true);
 
   const storeToken = (token: string) => {

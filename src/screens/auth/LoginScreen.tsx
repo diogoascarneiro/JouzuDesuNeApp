@@ -1,6 +1,6 @@
-import React from 'react';
+import {useContext, useState} from 'react';
 
-import {UsernameInput, PasswordInput} from '../../components/UI/Inputs';
+import {EmailInput, PasswordInput} from '../../components/UI/Inputs';
 import {
   MainContainer,
   BtnFull,
@@ -11,12 +11,42 @@ import {
   LogoS,
   LogoWrapper,
   TextLink,
+  ErrorText,
 } from './styled.Auth';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {SafeAreaView} from 'react-native';
 import {LoginProps} from '../../utils/globalTypes';
+import {login} from '../../api/api';
+import {UserContext} from '../../context/UserContext';
 
 const LoginScreen = ({navigation}: LoginProps) => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const {isLoggedIn, storeToken, authenticateUser} = useContext(UserContext);
+
+  // if (isLoggedIn) {
+  //   navigation.navigate('Home');
+  // }
+
+  const handleLogin = async () => {
+    setIsSubmitting(true);
+    setError('');
+    try {
+      const res = await login({email, password});
+      storeToken(res.data.authToken);
+      authenticateUser();
+      //navigation.navigate('Home');
+    } catch (e: any) {
+      console.log(e);
+      setError(e.message);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <SafeAreaView>
       <NavWrapper>
@@ -34,11 +64,12 @@ const LoginScreen = ({navigation}: LoginProps) => {
           <H1 align="left">Log in</H1>
         </HeaderWrapper>
         <AuthWrapper>
-          <UsernameInput />
-          <PasswordInput />
+          <EmailInput value={email} onChangeText={setEmail} />
+          <PasswordInput value={password} onChangeText={setPassword} />
+          <ErrorText>{error}</ErrorText>
           <BtnFull
-            title="Log in"
-            onPress={() => navigation.navigate('Start')}
+            title={isSubmitting ? 'Logging in...' : 'Log in'}
+            onPress={handleLogin}
           />
         </AuthWrapper>
         <TextLink onPress={() => navigation.navigate('Signup')}>

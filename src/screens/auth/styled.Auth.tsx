@@ -38,6 +38,10 @@ export const LogoWrapper = styled(Container)`
   align-items: center;
 `;
 
+export const ErrorText = styled(P)`
+  color: red;
+`;
+
 export const TextLink = ({children, onPress}: TextLinkProps) => {
   return (
     <>

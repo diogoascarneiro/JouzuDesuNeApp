@@ -1,15 +1,23 @@
-import type {NativeStackScreenProps} from '@react-navigation/native-stack';
 // Navigation types
+import type {NativeStackScreenProps} from '@react-navigation/native-stack';
 
-export type RootStackParams = {
+export type LoggedOutStackParams = {
   Start: undefined;
   Login: undefined;
   Signup: undefined;
 };
 
-export type StartProps = NativeStackScreenProps<RootStackParams, 'Start'>;
-export type LoginProps = NativeStackScreenProps<RootStackParams, 'Login'>;
-export type SignupProps = NativeStackScreenProps<RootStackParams, 'Signup'>;
+export type LoggedInStackParams = {
+  Home: undefined;
+};
+
+export type StartProps = NativeStackScreenProps<LoggedOutStackParams, 'Start'>;
+export type LoginProps = NativeStackScreenProps<LoggedOutStackParams, 'Login'>;
+export type SignupProps = NativeStackScreenProps<
+  LoggedOutStackParams,
+  'Signup'
+>;
+export type HomeProps = NativeStackScreenProps<LoggedInStackParams, 'Home'>;
 
 // DB Item Shapes
 export interface CardShape {
@@ -41,7 +49,7 @@ export interface DeckShape {
 
 export interface UserShape {
   _id?: string;
-  username: string;
+  username?: string;
   userType?: string;
   email?: string;
   password?: string;
