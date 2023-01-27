@@ -25,11 +25,7 @@ const LoginScreen = ({navigation}: LoginProps) => {
   const [error, setError] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const {isLoggedIn, storeToken, authenticateUser} = useContext(UserContext);
-
-  // if (isLoggedIn) {
-  //   navigation.navigate('Home');
-  // }
+  const {storeToken, authenticateUser} = useContext(UserContext);
 
   const handleLogin = async () => {
     setIsSubmitting(true);
@@ -38,7 +34,6 @@ const LoginScreen = ({navigation}: LoginProps) => {
       const res = await login({email, password});
       storeToken(res.data.authToken);
       authenticateUser();
-      //navigation.navigate('Home');
     } catch (e: any) {
       console.log(e);
       setError(e.message);

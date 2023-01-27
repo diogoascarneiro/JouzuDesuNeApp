@@ -10,9 +10,6 @@ const backgroundImg = require('../../assets/img/sakura-hero.jpg');
 // TODO: Finish converting normal styles to styled components
 
 const StartScreen = ({navigation}: StartProps) => {
-  // const {isLoggedIn} = useContext(UserContext);
-
-  // if (isLoggedIn) navigation.navigate('Home');
   return (
     <View style={styles.container}>
       <ImageBackground
