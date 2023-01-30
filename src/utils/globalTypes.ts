@@ -8,7 +8,8 @@ export type LoggedOutStackParams = {
 };
 
 export type LoggedInStackParams = {
-  Home: undefined;
+  BottomTabs: undefined;
+  DeckSession: undefined;
 };
 
 export type StartProps = NativeStackScreenProps<LoggedOutStackParams, 'Start'>;
@@ -17,7 +18,14 @@ export type SignupProps = NativeStackScreenProps<
   LoggedOutStackParams,
   'Signup'
 >;
-export type HomeProps = NativeStackScreenProps<LoggedInStackParams, 'Home'>;
+export type BottomTabsProps = NativeStackScreenProps<
+  LoggedInStackParams,
+  'BottomTabs'
+>;
+export type DeckSessionProps = NativeStackScreenProps<
+  LoggedInStackParams,
+  'DeckSession'
+>;
 
 // DB Item Shapes
 export interface CardShape {

@@ -3,16 +3,12 @@ import {Text, View, StyleSheet} from 'react-native';
 
 //interface DeckProps {}
 
-const DeckScreen = () => {
+const DeckSessionScreen = () => {
   return (
-    <View style={styles.container}>
+    <View>
       <Text>Deck</Text>
     </View>
   );
 };
 
-export default DeckScreen;
-
-const styles = StyleSheet.create({
-  container: {},
-});
+export default DeckSessionScreen;

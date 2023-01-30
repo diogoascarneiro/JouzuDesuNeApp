@@ -1,13 +1,13 @@
 import {useState, useEffect} from 'react';
-import {getAllDecks} from '../../api/api';
-import {DeckShape} from '../../utils/globalTypes';
+import {getAllDecks} from '../../../api/api';
+import {DeckShape} from '../../../utils/globalTypes';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {Container, BtnFull, P, H1, Separator} from './styled.DeckListScreen';
-import Deck from '../../components/Deck/Deck';
+import Deck from '../../../components/Deck/Deck';
 import {FlatList} from 'react-native';
 
 // Temporary testing while api is not updated
-const defaultBG = require('../../assets/img/decks/default.jpg');
+const defaultBG = require('../../../assets/img/decks/default.jpg');
 
 const DeckListScreen = () => {
   const [deckList, setDeckList] = useState([] as DeckShape[]);

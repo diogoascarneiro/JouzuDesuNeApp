@@ -1,19 +1,17 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import BottomTabRoutes from './BottomTabRoutes';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {LoggedInStackParams} from '../utils/globalTypes';
-import HomeScreen from '../screens/landing/HomeScreen/HomeScreen';
-import HowToScreen from '../screens/landing/HowToScreen';
-import DeckListScreen from '../screens/decks/DeckListScreen';
+import DeckSessionScreen from '../screens/decks/DeckSessionScreen/DeckSessionScreen';
 
 const LoggedInRoutes = () => {
-  const LoggedInTabs = createBottomTabNavigator();
+  const LoggedInStack = createNativeStackNavigator<LoggedInStackParams>();
 
   return (
-    <LoggedInTabs.Navigator>
-      <LoggedInTabs.Screen name="Home" component={HomeScreen} />
-      <LoggedInTabs.Screen name="How to" component={HowToScreen} />
-      <LoggedInTabs.Screen name="All decks" component={DeckListScreen} />
-    </LoggedInTabs.Navigator>
+    <LoggedInStack.Navigator>
+      <LoggedInStack.Screen name="BottomTabs" component={BottomTabRoutes} />
+      <LoggedInStack.Screen name="DeckSession" component={DeckSessionScreen} />
+    </LoggedInStack.Navigator>
   );
 };
 

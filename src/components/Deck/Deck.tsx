@@ -1,7 +1,9 @@
 import {useState} from 'react';
 import {ImageSourcePropType, TouchableWithoutFeedback} from 'react-native';
 import {BtnFull} from '../UI/Buttons';
-import {Wrapper, InnerContainer, TitleText, P} from './styled.Deck';
+import {Wrapper, Background, InnerContainer, TitleText, P} from './styled.Deck';
+import {useNavigation} from '@react-navigation/native';
+import {LoggedInStackParams} from '../../utils/globalTypes';
 
 interface DeckProps {
   title: String;
@@ -19,21 +21,27 @@ const Deck = ({
   numOfCards,
 }: DeckProps) => {
   const [isFrontSide, setIsFrontSide] = useState(true);
+  const {navigate} = useNavigation<any>();
 
   return (
     <TouchableWithoutFeedback onPress={() => setIsFrontSide(!isFrontSide)}>
       <Wrapper>
-        <InnerContainer source={bgImg} resizeMode="cover">
-          {isFrontSide && <TitleText>{title}</TitleText>}
-          {!isFrontSide && (
-            <>
-              <P>{description}</P>
-              <P>{`Difficulty: ${difficulty}`}</P>
-              <P>{`Num. of Cards: ${numOfCards}`}</P>
-              <BtnFull title="Start" onPress={() => console.log('ping')} />
-            </>
-          )}
-        </InnerContainer>
+        <Background source={bgImg} resizeMode="cover">
+          <InnerContainer>
+            {isFrontSide && <TitleText>{title}</TitleText>}
+            {!isFrontSide && (
+              <>
+                <P>{description}</P>
+                <P>{`Difficulty: ${difficulty}`}</P>
+                <P>{`Num. of Cards: ${numOfCards}`}</P>
+                <BtnFull
+                  title="Start"
+                  onPress={() => navigate('DeckSession')}
+                />
+              </>
+            )}
+          </InnerContainer>
+        </Background>
       </Wrapper>
     </TouchableWithoutFeedback>
   );
