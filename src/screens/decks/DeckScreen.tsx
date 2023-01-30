@@ -1,17 +1,17 @@
 import * as React from 'react';
 import {Text, View, StyleSheet} from 'react-native';
 
-//interface DeckListProps {}
+//interface DeckProps {}
 
-const DeckList = () => {
+const DeckScreen = () => {
   return (
     <View style={styles.container}>
-      <Text>DeckList</Text>
+      <Text>Deck</Text>
     </View>
   );
 };
 
-export default DeckList;
+export default DeckScreen;
 
 const styles = StyleSheet.create({
   container: {},

@@ -1,5 +1,5 @@
 import {SafeAreaView} from 'react-native-safe-area-context';
-import {Container, H1, H2, H3, P, BtnFull} from './styled.HomeScreen';
+import {Container, P, BtnFull} from './styled.HomeScreen';
 import {UserContext} from '../../../context/UserContext';
 import {useContext} from 'react';
 
