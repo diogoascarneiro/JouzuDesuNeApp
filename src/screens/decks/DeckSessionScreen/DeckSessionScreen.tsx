@@ -142,6 +142,7 @@ const DeckSessionScreen = ({navigation, route}: DeckSessionProps) => {
   if (shuffledDeck && currentCard >= shuffledDeck.cards.length) {
     return (
       <DeckComplete
+        deckId={deckId}
         totalScore={totalScore}
         bestPossibleScore={bestPossibleScore}
         cardScores={cardScores}

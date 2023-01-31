@@ -77,3 +77,10 @@ export interface UserShape {
   cards?: UserCardShape[];
   decks?: [];
 }
+
+// Misc
+
+export interface ICardScores {
+  cardId: string;
+  score: number;
+}

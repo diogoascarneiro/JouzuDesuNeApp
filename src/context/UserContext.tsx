@@ -5,9 +5,7 @@ import {UserShape} from '../utils/globalTypes';
 
 interface UserContextShape {
   user: UserShape | null;
-  setUser:
-    | React.Dispatch<React.SetStateAction<null>>
-    | React.Dispatch<React.SetStateAction<UserShape>>;
+  setUser: React.Dispatch<React.SetStateAction<UserShape | null>>;
   isLoggedIn: boolean;
   storeToken: (token: string) => void;
   authenticateUser: () => void;
@@ -18,7 +16,7 @@ interface UserContextShape {
 const UserContext = createContext<UserContextShape>({} as UserContextShape);
 
 const UserProviderWrapper = ({children}: {children: ReactNode}) => {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState<UserShape | null>(null);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 

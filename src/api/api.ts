@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {DeckShape, UserShape} from '../utils/globalTypes';
+import {DeckShape, UserShape, ICardScores} from '../utils/globalTypes';
 import {REACT_APP_JOUZUDESUNE_API} from '@env';
 
 // Typescript interfaces
@@ -64,7 +64,7 @@ export const updateUserCardData = (
   return axios.put(`${baseURL}/users/${user._id}/cards/${cardId}`, card);
 };
 
-export const updateAllDeckCards = (user: UserShape, cards: DeckShape) => {
+export const updateAllDeckCards = (user: UserShape, cards: ICardScores[]) => {
   return axios.put(`${baseURL}/users/${user._id}/cards/`, cards);
 };
 
