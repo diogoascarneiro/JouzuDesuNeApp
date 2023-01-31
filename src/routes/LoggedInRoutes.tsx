@@ -8,7 +8,7 @@ const LoggedInRoutes = () => {
   const LoggedInStack = createNativeStackNavigator<LoggedInStackParams>();
 
   return (
-    <LoggedInStack.Navigator>
+    <LoggedInStack.Navigator screenOptions={{headerShown: false}}>
       <LoggedInStack.Screen name="BottomTabs" component={BottomTabRoutes} />
       <LoggedInStack.Screen name="DeckSession" component={DeckSessionScreen} />
     </LoggedInStack.Navigator>

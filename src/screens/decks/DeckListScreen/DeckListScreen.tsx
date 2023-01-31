@@ -29,6 +29,7 @@ const DeckListScreen = () => {
           renderItem={({item}) => (
             <>
               <Deck
+                id={item._id!}
                 title={item.name}
                 bgImg={defaultBG}
                 description={item.description}

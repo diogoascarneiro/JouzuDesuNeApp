@@ -9,7 +9,7 @@ export type LoggedOutStackParams = {
 
 export type LoggedInStackParams = {
   BottomTabs: undefined;
-  DeckSession: undefined;
+  DeckSession: {deckId: string};
 };
 
 export type StartProps = NativeStackScreenProps<LoggedOutStackParams, 'Start'>;
@@ -18,10 +18,12 @@ export type SignupProps = NativeStackScreenProps<
   LoggedOutStackParams,
   'Signup'
 >;
+
 export type BottomTabsProps = NativeStackScreenProps<
   LoggedInStackParams,
   'BottomTabs'
 >;
+
 export type DeckSessionProps = NativeStackScreenProps<
   LoggedInStackParams,
   'DeckSession'
@@ -45,14 +47,24 @@ export interface CardShape {
   wordCategory: string;
   wordSubcategory: string;
 }
+
+// Cards inside User documents, with extra info relating to scores for that user
+export interface UserCardShape {
+  averageScore: number;
+  cardId: CardShape;
+  score: number;
+  timesSeen: number;
+  _id: string;
+}
+
 export interface DeckShape {
   _id?: string;
   name: string;
-  cards: [CardShape];
+  cards: CardShape[];
   description: string;
   difficulty: number;
   image: string;
-  dependencies: [any];
+  dependencies: any[];
 }
 
 export interface UserShape {
@@ -62,6 +74,6 @@ export interface UserShape {
   email?: string;
   password?: string;
   profilePicture?: string;
-  cards?: [CardShape];
+  cards?: UserCardShape[];
   decks?: [];
 }

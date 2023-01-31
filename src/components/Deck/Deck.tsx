@@ -6,6 +6,7 @@ import {useNavigation} from '@react-navigation/native';
 import {LoggedInStackParams} from '../../utils/globalTypes';
 
 interface DeckProps {
+  id: String;
   title: String;
   bgImg: ImageSourcePropType;
   difficulty: Number;
@@ -14,6 +15,7 @@ interface DeckProps {
 }
 
 const Deck = ({
+  id,
   title,
   bgImg,
   difficulty,
@@ -36,7 +38,7 @@ const Deck = ({
                 <P>{`Num. of Cards: ${numOfCards}`}</P>
                 <BtnFull
                   title="Start"
-                  onPress={() => navigate('DeckSession')}
+                  onPress={() => navigate('DeckSession', {deckId: id})}
                 />
               </>
             )}

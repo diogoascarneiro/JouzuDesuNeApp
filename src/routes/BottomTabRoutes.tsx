@@ -9,7 +9,7 @@ const BottomTabRoutes = () => {
   const BottomTabs = createBottomTabNavigator();
 
   return (
-    <BottomTabs.Navigator>
+    <BottomTabs.Navigator screenOptions={{headerShown: false}}>
       <BottomTabs.Screen name="Home" component={HomeScreen} />
       <BottomTabs.Screen name="How to" component={HowToScreen} />
       <BottomTabs.Screen name="All decks" component={DeckListScreen} />
