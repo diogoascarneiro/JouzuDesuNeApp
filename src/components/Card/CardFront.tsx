@@ -10,7 +10,7 @@ interface CardFrontProps {
   card: CardShape;
   id: string;
   showCardBack: () => void;
-  trackScore: any; // todo: change
+  trackScore: (score: number, cardId: string) => void;
   cardQuestions: any; // todo: change
   numOfOptions: number;
 }
@@ -35,7 +35,7 @@ const CardFront = ({
       <Background source={defaultBG} resizeMode="cover">
         <InnerContainer>
           <P>{card.questionWord}</P>
-          <Btn title="testflip" onPress={() => console.log('flip')} />
+          <Btn title="testflip" onPress={() => showCardBack()} />
         </InnerContainer>
       </Background>
     </Wrapper>

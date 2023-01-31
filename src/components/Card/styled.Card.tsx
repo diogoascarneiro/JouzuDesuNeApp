@@ -6,8 +6,8 @@ export {P} from '../UI/Text';
 export {Btn} from '../UI/Buttons';
 
 export const Wrapper = styled.View`
-  width: 200px;
-  height: 400px;
+  width: 100%;
+  height: 85%;
   border: 1px solid black;
   border-radius: 20px;
   justify-content: center;
