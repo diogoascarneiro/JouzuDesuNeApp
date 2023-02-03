@@ -1,6 +1,7 @@
 import styled from 'styled-components/native';
 import {ImageBackground} from 'react-native';
 import {H3} from '../UI/Text';
+export {H1, H2, H3} from '../UI/Text';
 import {Container} from '../UI/BaseStyles';
 export {P} from '../UI/Text';
 export {Btn} from '../UI/Buttons';

@@ -12,6 +12,7 @@ import {BtnFull} from '../UI/Buttons';
 import {P} from '../UI/Text';
 import {ICardScores, UserShape} from '../../utils/globalTypes';
 import {useNavigation} from '@react-navigation/native';
+import {Image} from 'react-native';
 
 interface IDeckCompleteProps {
   deckId: string;
@@ -33,11 +34,11 @@ const DeckComplete = ({
 
   const winImage = () => {
     const winImages = [
-      '/img/thumbs-up1.gif',
-      '/img/thumbs-up2.gif',
-      '/img/thumbs-up3.gif',
-      '/img/thumbs-up4.gif',
-      '/img/thumbs-up5.gif',
+      require('../../assets/img/thumbs-up1.gif'),
+      require('../../assets/img/thumbs-up2.gif'),
+      require('../../assets/img/thumbs-up3.gif'),
+      require('../../assets/img/thumbs-up4.gif'),
+      require('../../assets/img/thumbs-up5.gif'),
     ];
     return winImages[Math.floor(Math.random() * winImages.length)];
   };
@@ -89,6 +90,10 @@ const DeckComplete = ({
   return (
     <SafeAreaView>
       <P>Ya did it</P>
+      <Image source={winImage()} />
+      <P>
+        Your score: {totalScore}/{bestPossibleScore}
+      </P>
       <BtnFull title="go back" onPress={() => navigate('BottomTabs')} />
     </SafeAreaView>
   );

@@ -4,6 +4,7 @@ import {LoggedInStackParams} from '../utils/globalTypes';
 import HomeScreen from '../screens/landing/HomeScreen/HomeScreen';
 import HowToScreen from '../screens/landing/HowToScreen';
 import DeckListScreen from '../screens/decks/DeckListScreen/DeckListScreen';
+import ProfileScreen from '../screens/dashboard/ProfileScreen';
 
 const BottomTabRoutes = () => {
   const BottomTabs = createBottomTabNavigator();
@@ -11,8 +12,9 @@ const BottomTabRoutes = () => {
   return (
     <BottomTabs.Navigator screenOptions={{headerShown: false}}>
       <BottomTabs.Screen name="Home" component={HomeScreen} />
-      <BottomTabs.Screen name="How to" component={HowToScreen} />
+      {/* <BottomTabs.Screen name="How to" component={HowToScreen} /> */}
       <BottomTabs.Screen name="All decks" component={DeckListScreen} />
+      <BottomTabs.Screen name="Profile" component={ProfileScreen} />
     </BottomTabs.Navigator>
   );
 };

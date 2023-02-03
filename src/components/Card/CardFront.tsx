@@ -25,17 +25,32 @@ const CardFront = ({
 }: CardFrontProps) => {
   const [cardScore, setCardScore] = useState(numOfOptions - 1);
 
-  // useEffect(() => {
-  //   if (numOfOptions) setCardScore(numOfOptions - 1);
-  // }, [numOfOptions]);
-  if (!card || !cardQuestions?.meanings?.length) return <Loading />;
+  // TODO: refactor for native
+  // const handleAnswer = (e) => {
+  //   if (e.target.innerText.toLowerCase() !== cardQuestions.correctMeaning.toLowerCase()) {
+  //     e.target.style.visibility = "hidden";
+  //     setCardScore(cardScore - 1);
+  //   }
+  //   if (e.target.innerText.toLowerCase() === cardQuestions.correctMeaning.toLowerCase()) {
+  //     showCardBack();
+  //     trackScore(cardScore, id);
+  //   }
+  // };
 
+  if (!card || !cardQuestions?.meanings?.length) return <Loading />;
+  console.log('cardQuestions', cardQuestions);
   return (
     <Wrapper>
       <Background source={defaultBG} resizeMode="cover">
         <InnerContainer>
           <P>{card.questionWord}</P>
-          <Btn title="testflip" onPress={() => showCardBack()} />
+          {cardQuestions.meanings.map((question: string, i: number) => (
+            <Btn
+              title={question}
+              key={`${question}${i}`}
+              onPress={() => showCardBack()}
+            />
+          ))}
         </InnerContainer>
       </Background>
     </Wrapper>

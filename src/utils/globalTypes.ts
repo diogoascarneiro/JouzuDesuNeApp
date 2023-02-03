@@ -46,6 +46,8 @@ export interface CardShape {
   difficulty: string;
   wordCategory: string;
   wordSubcategory: string;
+  wordAudio: string;
+  exampleAudio: string;
 }
 
 // Cards inside User documents, with extra info relating to scores for that user
@@ -67,6 +69,19 @@ export interface DeckShape {
   dependencies: any[];
 }
 
+export interface UserDeckShape {
+  _id?: string;
+  name?: string;
+  cards?: CardShape[];
+  description?: string;
+  difficulty?: number;
+  image?: string;
+  dependencies?: any[];
+  deckId: string;
+  timesPlayed: number;
+  highScore: number;
+}
+
 export interface UserShape {
   _id?: string;
   username?: string;
@@ -75,7 +90,7 @@ export interface UserShape {
   password?: string;
   profilePicture?: string;
   cards?: UserCardShape[];
-  decks?: [];
+  decks?: UserDeckShape[];
 }
 
 // Misc
