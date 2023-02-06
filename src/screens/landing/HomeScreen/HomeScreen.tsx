@@ -14,6 +14,7 @@ const HomeScreen = ({navigation}: any) => {
         <P>Home Screen</P>
 
         <BtnFull title="Log out" onPress={() => logoutUser()} />
+        <BtnFull title="sound test" onPress={() => console.log('test')} />
       </Container>
     </SafeAreaView>
   );
